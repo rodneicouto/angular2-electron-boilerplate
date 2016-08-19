@@ -60,6 +60,10 @@ gulp.task("typescript:watch", function() {
    gulp.watch('./src/**/*.ts',['electron:transpile:ts']);
 });
 
+gulp.task("htmlWatch", function() {
+   gulp.watch('./src/**/*.html',['electron:copy']);
+});
+
 gulp.task('electron:build:osx', function(){
     gulp.src(['dist/electron-package/**/*'])
         .pipe(electron({
@@ -92,6 +96,8 @@ gulp.task('electron:package', (done) => {
   return runSeq('build',
     ['electron:build:win','electron:build:osx', 'electron:build:linux'], done);
 });
+
+gulp.task("watch", ['typescript:watch', 'sass:watch', 'htmlWatch']);
 
 gulp.task('build', ['electron:build']);
 
