@@ -7,7 +7,10 @@
       'angular2-in-memory-web-api': 'assets/js/vendor/angular2-in-memory-web-api',
       '@angular': 'assets/js/vendor/@angular',
       'ng2-bootstrap': 'assets/js/vendor/ng2-bootstrap',
-      'moment': 'assets/js/vendor/moment'
+      'moment': 'assets/js/vendor/moment',
+      'nedb': 'assets/js/vendor/nedb',
+      // 'electron': 'assets/js/vendor/electron'
+
   };
   
   // packages tells the System loader how to load when no filename and/or no extension
@@ -34,18 +37,21 @@
     '@angular/platform-browser-dynamic',
     '@angular/router',
     '@angular/upgrade',
-    'ng2-bootstrap',
-    'core-js'
+    'core-js',
+    // 'electron'
   ];
 
   // add package entries for angular packages in the form '@angular/common': { main: 'index.js', defaultExtension: 'js' }
   packageIndexJS.forEach(function(pkgName) {
     packages[pkgName] = { main: 'index.js', defaultExtension: 'js' };
   });
-
+packages['nedb'] = { main: 'browser-version/out/nedb.js'}
 
 var packagesName = [
-  'moment'
+  'moment',
+  'ng2-bootstrap',
+  // 'underscore',
+  // 'async'
 ];
 
 packagesName.forEach((pkg) => {

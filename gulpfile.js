@@ -17,7 +17,8 @@ gulp.task('electron:copy', () => {
           "./node_modules/es6-shim/es6-shim.min.js",
           "./node_modules/reflect-metadata/Reflect.js",
           "./node_modules/systemjs/dist/system.src.js",
-          "./node_modules/zone.js/dist/zone.js"
+          "./node_modules/zone.js/dist/zone.js",
+          "./node_modules/async/lib/async.js"
       ],
       to: "./dist/assets/js/vendor"
     },
@@ -36,9 +37,9 @@ gulp.task('electron:copy', () => {
     {
       from: ['./src/**/*', '!./src/assets/scss/*'],
       to: './dist'
-    },
+    }
     //customizado
-    {
+    ,{
       from: "node_modules/ng2-bootstrap/**/*",
       to: "./dist/assets/js/vendor/ng2-bootstrap"
      },
@@ -46,8 +47,14 @@ gulp.task('electron:copy', () => {
        from: "./node_modules/moment/**/*",
        to: "./dist/assets/js/vendor/moment"
      }
-
- 
+    ,{
+       from: "./node_modules/nedb/**/*",
+       to: "./dist/assets/js/vendor/nedb"
+     }
+     // ,{
+     //   from: "./node_modules/electron-prebuilt/index.js",
+     //   to: "./dist/assets/js/vendor/electron/"
+     // }
   ];
 
   return fssetup.map((setup) => {
