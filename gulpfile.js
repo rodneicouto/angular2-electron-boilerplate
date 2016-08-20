@@ -36,7 +36,18 @@ gulp.task('electron:copy', () => {
     {
       from: ['./src/**/*', '!./src/assets/scss/*'],
       to: './dist'
-    }
+    },
+    //customizado
+    {
+      from: "node_modules/ng2-bootstrap/**/*",
+      to: "./dist/assets/js/vendor/ng2-bootstrap"
+     },
+    ,{
+       from: "./node_modules/moment/**/*",
+       to: "./dist/assets/js/vendor/moment"
+     }
+
+ 
   ];
 
   return fssetup.map((setup) => {

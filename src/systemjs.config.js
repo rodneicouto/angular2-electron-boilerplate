@@ -6,8 +6,10 @@
       'rxjs': 'assets/js/vendor/rxjs',
       'angular2-in-memory-web-api': 'assets/js/vendor/angular2-in-memory-web-api',
       '@angular': 'assets/js/vendor/@angular',
-      '@angular2-material': 'assets/js/vendor/@angular2-material'
+      'ng2-bootstrap': 'assets/js/vendor/ng2-bootstrap',
+      'moment': 'assets/js/vendor/moment'
   };
+  
   // packages tells the System loader how to load when no filename and/or no extension
   var packages = {
       'app': {
@@ -22,7 +24,7 @@
       }
   };
 
-  var packageNames = [
+  var packageIndexJS = [
     '@angular/common',
     '@angular/compiler',
     '@angular/core',
@@ -32,32 +34,22 @@
     '@angular/platform-browser-dynamic',
     '@angular/router',
     '@angular/upgrade',
-    '@angular2-material',
+    'ng2-bootstrap',
     'core-js'
   ];
 
   // add package entries for angular packages in the form '@angular/common': { main: 'index.js', defaultExtension: 'js' }
-  packageNames.forEach(function(pkgName) {
+  packageIndexJS.forEach(function(pkgName) {
     packages[pkgName] = { main: 'index.js', defaultExtension: 'js' };
   });
 
-/**
- Simplicity sake for Angular 2 Material
- **/
 
-var materialPkgs = [
-  'core',
-  'toolbar',
-  'icon',
-  'button',
-  'sidenav',
-  'list',
-  'card',
-  'input',
+var packagesName = [
+  'moment'
 ];
 
-materialPkgs.forEach((pkg) => {
-  packages[`@angular2-material/${pkg}`] = {main: `${pkg}.js`};
+packagesName.forEach((pkg) => {
+  packages[`${pkg}`] = {main: `${pkg}.js`, defaultExtension: 'js'};
 });
 
   var config = {
