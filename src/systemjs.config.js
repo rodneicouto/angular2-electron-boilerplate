@@ -8,8 +8,6 @@
       '@angular': 'assets/js/vendor/@angular',
       'ng2-bootstrap': 'assets/js/vendor/ng2-bootstrap',
       'moment': 'assets/js/vendor/moment',
-      'nedb': 'assets/js/vendor/nedb',
-      // 'electron': 'assets/js/vendor/electron'
 
   };
   
@@ -37,21 +35,17 @@
     '@angular/platform-browser-dynamic',
     '@angular/router',
     '@angular/upgrade',
-    'core-js',
-    // 'electron'
+    'core-js'
   ];
 
   // add package entries for angular packages in the form '@angular/common': { main: 'index.js', defaultExtension: 'js' }
   packageIndexJS.forEach(function(pkgName) {
     packages[pkgName] = { main: 'index.js', defaultExtension: 'js' };
   });
-packages['nedb'] = { main: 'browser-version/out/nedb.js'}
-
+  
 var packagesName = [
   'moment',
-  'ng2-bootstrap',
-  // 'underscore',
-  // 'async'
+  'ng2-bootstrap'
 ];
 
 packagesName.forEach((pkg) => {

@@ -20,6 +20,10 @@
     </head>
 
     <my-app>Loading...</my-app>
+    <script>
+        var remote = require('electron').remote; 
+        window.database = remote.getGlobal('database');       
+    </script>
 
     <!-- Let's have System.js load our boot.js file -->
     <script src="systemjs.config.js"></script>

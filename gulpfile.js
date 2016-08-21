@@ -47,14 +47,6 @@ gulp.task('electron:copy', () => {
        from: "./node_modules/moment/**/*",
        to: "./dist/assets/js/vendor/moment"
      }
-    ,{
-       from: "./node_modules/nedb/**/*",
-       to: "./dist/assets/js/vendor/nedb"
-     }
-     // ,{
-     //   from: "./node_modules/electron-prebuilt/index.js",
-     //   to: "./dist/assets/js/vendor/electron/"
-     // }
   ];
 
   return fssetup.map((setup) => {
